@@ -19,8 +19,9 @@
 	- dfs
 - [ ] **Problem 7**
 	- extension of topological sorting
-- [ ] **Problem 8**
+- [x] **Problem 8**
 	- always sorted?
+	- no duplicates in one set?
 - [x] **Problem 9**
 	- time overlap
 	- always sorted?

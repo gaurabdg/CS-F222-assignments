@@ -1,42 +1,52 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void printUnion(int arr1[], int arr2[], int m, int n)
+void print(long int *a, long int n)
 {
-  int i = 0, j = 0;
-  while (i < m && j < n)
-  {
-    if (arr1[i] < arr2[j])
-       printf("%d ",arr1[i++]);
-     
-    else if (arr2[j] < arr1[i])
-       printf("%d ",arr2[i++]);
-     
-    else
-    {
-       printf("%d ",arr2[i++]);
-       i++;
-    }
-  }
- 
-  /* Print remaining elements of the larger array */
-  while(i < m)
-     printf("%d ",arr1[i++]);
- 
-  while(j < n)
-    printf("%d ",arr2[i++]);
+  long int i;
+  for(i=0;i<n;i++)
+    printf("%ld ",a[i]);
+  printf("\n");
 }
- 
-/* Driver program to test above function */
+
+void combos(long int n, long int *na, long int m[][10000], long int k,long int *a,long int *data,long int start,long int end, long int index, long int r)
+{
+  long int i;
+  if(index==r)
+  {
+    for(i=0;i<n;i++)
+    {
+      if(i!=k)
+        print(m[i],na[i]);
+    }
+    print(data,r);
+    printf("************************\n");
+  }
+  for(i=start; i<=end && end-i+1>=r-index; i++)
+  {
+    data[index] = a[i];
+    combos(n,na,m,k,a,data,i+1,end,index+1,r);
+  }
+}
+
+void printCombs(long int n, long int *na, long int m[][10000],long int k, long int *a, long int p, long int r)
+{
+  long int *data = (long int *)malloc(r*sizeof(long int));
+  combos(n,na,m,k,a,data,0,n-1,0,r);
+}
+
 int main()
 {
-  int arr1[] = {1, 2, 4, 5, 6};
-  int arr2[] = {2, 3, 5, 7};
-   
-  int m = sizeof(arr1)/sizeof(arr1[0]);
-  int n = sizeof(arr2)/sizeof(arr2[0]);
-   
-  // Function calling
-  printUnion(arr1, arr2, m, n);
- 
+  long int n,na[1000], i, j, a[1000][10000];
+  scanf("%ld",&n);
+  for(i=0;i<n;i++)
+  {
+    scanf("%ld",&na[i]);
+    for(j=0;j<na[i];j++)
+      scanf("%ld",&a[i][j]);
+  }
+  for(i=0;i<n;i++)
+    for(j=0;j<(na[i]/2);j++)
+      printCombs(n,na,a,i,a[i],na[i],j);
   return 0;
 }
