@@ -4,15 +4,19 @@
 
 - [x] **Problem 1**
 	- improve complexity(currently O(n^3))
-- [ ] **Problem 2**
+- [x] **Problem 2**
 	- topological sorting
-	- easier impl? adj matrix
+	- ~~easier impl? adj matrix~~
+	- ~~detect cycle~~
+	- ~~failed in b->a<->c | loop in subgraph~~
+	- check for more test cases with **loops**
 - [x] **Problem 3**
 	- detection of the connected components of an undirected graph
 	- adjmat - https://math.stackexchange.com/questions/277045/easiest-way-to-determine-all-disconnected-sets-from-a-graph
 	- revise | more testcases
 - [ ] **Problem 4**
 	- min diff | no clue
+	- wrong testcase | suboptimal
 - [ ] **Problem 5**
 	- generate combos
 - [x] **Problem 6**

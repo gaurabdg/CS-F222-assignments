@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print(long int *a, long int n)
+void print(int *a, int n)
 {
-  long int i;
+   int i;
   for(i=0;i<n;i++)
-    printf("%ld ",a[i]);
+    printf("%d ",a[i]);
   printf("\n");
 }
 
-void combos(long int n, long int *na, long int m[][10000], long int k,long int *a,long int *data,long int start,long int end, long int index, long int r)
+void combos(int n, int *na, int m[][100], int k, int *a, int *data, int start, int end, int index, int r)
 {
-  long int i;
+  int i;
   if(index==r)
   {
     for(i=0;i<n;i++)
@@ -21,29 +21,31 @@ void combos(long int n, long int *na, long int m[][10000], long int k,long int *
     }
     print(data,r);
     printf("************************\n");
+    
   }
   for(i=start; i<=end && end-i+1>=r-index; i++)
   {
     data[index] = a[i];
+    
     combos(n,na,m,k,a,data,i+1,end,index+1,r);
   }
 }
 
-void printCombs(long int n, long int *na, long int m[][10000],long int k, long int *a, long int p, long int r)
+void printCombs(int n, int *na, int m[][100], int k, int *a, int p, int r)
 {
-  long int *data = (long int *)malloc(r*sizeof(long int));
+  int *data = (int*)malloc(r*sizeof( int));
   combos(n,na,m,k,a,data,0,n-1,0,r);
 }
 
 int main()
 {
-  long int n,na[1000], i, j, a[1000][10000];
-  scanf("%ld",&n);
+   int n,na[100], i, j,a[100][100];
+  scanf("%d",&n);
   for(i=0;i<n;i++)
   {
-    scanf("%ld",&na[i]);
+    scanf("%d",&na[i]);
     for(j=0;j<na[i];j++)
-      scanf("%ld",&a[i][j]);
+      scanf("%d",&a[i][j]);
   }
   for(i=0;i<n;i++)
     for(j=0;j<(na[i]/2);j++)
