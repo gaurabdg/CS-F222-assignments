@@ -17,8 +17,9 @@
 - [ ] **Problem 4**
 	- min diff | no clue
 	- wrong testcase | suboptimal
-- [ ] **Problem 5**
+- [x] **Problem 5**
 	- generate combos
+	- same power set impl
 - [x] **Problem 6**
 	- dfs
 - [ ] **Problem 7**
@@ -32,4 +33,8 @@
 	- first sample doubt(<= case)
 - [ ] **Problem 10**
 	- not now
+### TODO:
 
+- [ ] implement every problem using dynamic mem allocation
+- [ ] check corner cases for all
+- [ ] check for directed graphs
