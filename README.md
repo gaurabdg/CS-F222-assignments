@@ -29,8 +29,8 @@
 	- no duplicates in one set?
 - [x] **Problem 9**
 	- time overlap
-	- always sorted?
-	- first sample doubt(<= case)
+	- ~~always sorted?~~
+	- ~~first sample doubt(<= case)~~
 - [ ] **Problem 10**
 	- not now
 ### TODO:

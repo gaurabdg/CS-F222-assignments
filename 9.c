@@ -1,4 +1,10 @@
 #include<stdio.h>
+#include<stdlib.h>
+
+int cmpfunc(const void* a, const void* b)
+{
+	return (*(int*)a-*(int*)b);
+}
 
 int main()
 {
@@ -13,18 +19,22 @@ int main()
 		arr[p++]=a;
 		dep[q++]=d;
 	}
-		for(int i=0;i<cp;i++)
+	qsort(arr,cp,sizeof(int),cmpfunc);
+	qsort(dep,cp,sizeof(int),cmpfunc);
+
+	for(int i=0;i<cp;i++)
 		printf("%d ",arr[i]);
 	printf("\n");
 	for(int i=0;i<cp;i++)
 		printf("%d ",dep[i]);
+	printf("\n");
 
 	int need=0,res=0;
 	int i=0,j=0;
 
 	while(i<cp&&j<cp)
 	{
-		if(arr[i]<dep[j]) //<= acording to sample 1, but not matching
+		if(arr[i]<=dep[j]) 
 		{
 			need++;
 			i++;
