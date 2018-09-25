@@ -21,18 +21,21 @@ int main()
 	}
 
 	int av=sum/t;
-	printf("%d\n",sum );
-	int prevSum=0,currSum=0,nextSum=0;
-	int i;
+	// printf("%d\n",sum );
+	int currSum=0,nextSum=0;
+	// int i;
 	int res[t];
 	int K=0;
 	int T=t;
-	for(i=0;i<n;i++)
+	for(int i=0;i<n;i++)
 	{
 		currSum+=players[i];
-		nextSum = currSum+players[i+1];
-		// printf("%d %d\n",currSum,nextSum);
+		if(i<n-1)
+		{
+			nextSum = currSum+players[i+1];
+		}
 
+		// insert into result array, decrement partitions
 		if(abs(av-currSum)<abs(av-nextSum))
 		{
 			// printf("%d ",currSum);
@@ -40,10 +43,11 @@ int main()
 			T--;
 			currSum=0;
 		}
+
 		//when only one partition is left, fill all the remaining elements
-		if(T==1){
+		if(T==1)
+		{
 			int remSum=0;
-			// printf("%d",i );
 			for(int j=i+1;j<n;j++)
 			{
 				remSum+=players[j];
@@ -52,11 +56,11 @@ int main()
 		}
 
 	}
-	// printf("%d\n",i);
-	for(int i=0;i<t;i++)
-	{
-		printf("%d ",res[i]);
-	}
+
+	// for(int i=0;i<t;i++)
+	// {
+	// 	printf("%d ",res[i]);
+	// }
 
 	int max=0;
 	for(int i=0;i<t;i++)
@@ -64,7 +68,8 @@ int main()
 		if(res[i]>max)
 			max=res[i];
 	}
-	printf("%d", max);
-	
 
+	printf("\n%d", max);
+	
+	return 0;
 }

@@ -3,7 +3,7 @@
 ## Assignment 1
 
 - [x] **Problem 1**
-	- improve complexity(currently O(n^3))
+	- ~~clean~~
 - [x] **Problem 2**
 	- topological sorting
 	- ~~easier impl? adj matrix~~
@@ -37,6 +37,7 @@
 	- same power set impl
 - [x] **Problem 6**
 	- dfs
+	- print order inconsistent
 - [x] **Problem 7**
 	- all possible topological sortings
 	- revise
@@ -54,3 +55,4 @@
 - [ ] implement every problem using dynamic mem allocation
 - [ ] check corner cases for all
 - [ ] check for directed graphs
+- [ ] try c99 in terminal systems

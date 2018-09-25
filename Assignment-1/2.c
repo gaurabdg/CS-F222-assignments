@@ -2,12 +2,11 @@
 
 int main()
 {
-  int i,j,k,m,n=0,am[26][26]={{0}},y[26],z[26],c=0;
-  char letters[26]={'z'};
-  int edges,total=0;
+  int n=0,edges,am[26][26]={{0}},y[26],z[26],c=0;
+  char letters[26]={'z'},results[26];
   scanf("%d",&edges);
-  char results[26];
-  // printf("%d",edges);
+  
+  // convert chars relation to adj matrix
   while(edges--)
   {
     char x,y;
@@ -19,64 +18,72 @@ int main()
     am[X][Y]=1;
   }
 
+  // calculating number of nodes/distinct letters present in 
   for(int i=0;i<26;i++)
   {
     if(letters[i]>=97&&letters[i]<=122)
-      n++;
+        n++;
   }
   
-  for(i=0;i<n;i++)
-  {
-    for(j=0;j<n;j++)
-    {
-      printf("%d",am[i][j]);
-    }
-    printf("\n");
-  }
+  // for(int i=0;i<n;i++)
+  // {
+  //   for(int j=0;j<n;j++)
+  //   {
+  //     printf("%d",am[i][j]);
+  //   }
+  //   printf("\n");
+  // }
 
-  for(i=0;i<n;i++)
+  // initializing column sum and visited array
+  for(int i=0;i<n;i++)
   {
     y[i]=0;
     z[i]=0;
   }
 
-  for(i=0;i<n;i++)
+  // computing column sum
+  for(int i=0;i<n;i++)
   {
-    for(j=0;j<n;j++)
+    for(int j=0;j<n;j++)
     {
       y[i]=y[i]+am[j][i];
     } 
   }
 
+  // TOPOLOGICAL SORT
   int f=0;
   while(c<n)
   {
-      int u=0;
-      for(k=u;k<n;k++)
+    int u=0;
+    for(int k=u;k<n;k++)
     {
-
+      //check if visited and has edge
       if((y[k]==0)&&(z[k]==0))
       {
+        // appending nodes to result
         results[f++]=letters[k];
+        // set visited
         z[k]=1;
-        for(i=0;i<n;i++)
+        // removing all edges from the corresponding row
+        for(int i=0;i<n;i++)
         {
           if(am[k][i]==1)
             am[k][i]=0;
         }
-
-        for(i=0;i<n;i++)
+        // init column array for recomputation
+        for(int i=0;i<n;i++)
         {
           y[i]=0;
         }
-
-        for(m=0;m<n;m++)
+        // recompute col sum
+        for(int m=0;m<n;m++)
         {
-          for(j=0;j<n;j++)
+          for(int j=0;j<n;j++)
           {
             y[m]=y[m]+am[j][m];
           }
         }
+        
         break;
       }
     }  

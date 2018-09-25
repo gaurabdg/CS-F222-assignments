@@ -22,6 +22,7 @@ int main()
     }
   }
 
+  // generate subset perms(immediate refinements)
   for(int i=0;i<N;i++)
   {
     int pow_set_size = pow(2, na[i]-1); 
@@ -31,6 +32,7 @@ int main()
     { 
       for(int j = 0; j < na[i]; j++) 
       { 
+        // check if jth bit set
         if(counter & (1<<j)) 
           printf("%d ", arr[i][na[i]-1-j]); 
       }
@@ -38,11 +40,13 @@ int main()
 
       for(int j = 0; j < na[i]; j++) 
       { 
+        // check if jth bit is unset
         if(~counter & (1<<j)) 
           printf("%d ", arr[i][na[i]-1-j]); 
       }
       printf("\n");
 
+      // print the remaining sets
       for(int k=0;k<N;k++)
       {
         if(i!=k)
