@@ -48,19 +48,6 @@ int main()
     } 
   }
 
-  // cycle detection
-  // int cycles=0;
-  // for(int i=0;i<n;i++)
-  // {
-  //   if(y[i]!=0)
-  //     cycles++;
-  // }
-
-  // if(cycles==n){
-  //   printf("-1");
-  //   return 0;
-  // }
-
   int f=0;
   while(c<n)
   {

@@ -14,16 +14,32 @@
 	- detection of the connected components of an undirected graph
 	- adjmat - https://math.stackexchange.com/questions/277045/easiest-way-to-determine-all-disconnected-sets-from-a-graph
 	- revise | more testcases
-- [ ] **Problem 4**
-	- min diff | no clue
-	- wrong testcase | suboptimal
+- [x] **Problem 4**
+	- min diff | prefix sum -- iterate
+	- ~~wrong testcase | suboptimal~~
+	- extensive test case testing reqd
+	- useful testcase : 5 9	
+10 30 20 40 50 90 70 80 60
+3 11
+12
+40
+10
+5
+30
+20
+50
+32
+22
+70
+10
 - [x] **Problem 5**
 	- generate combos
 	- same power set impl
 - [x] **Problem 6**
 	- dfs
-- [ ] **Problem 7**
-	- extension of topological sorting
+- [x] **Problem 7**
+	- all possible topological sortings
+	- revise
 - [x] **Problem 8**
 	- always sorted?
 	- no duplicates in one set?
