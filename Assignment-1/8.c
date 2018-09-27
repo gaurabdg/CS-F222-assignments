@@ -1,10 +1,15 @@
 
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 
 int N,K,L;
 int S[1000],U[1000],T[1000];
 
+int cmpfunc(const void* a, const void* b)
+{
+  return(*(int*)a - *(int*)b);
+}
 
 void findUnion(int arr1[], int arr2[], int m, int n)
 {
@@ -104,6 +109,9 @@ int main()
     scanf("%d",&t);
     T[x++]=t;
   }
+  qsort(S,N,sizeof(int),cmpfunc);
+  qsort(U,K,sizeof(int),cmpfunc);
+  qsort(T,L,sizeof(int),cmpfunc);
   genPowerSet(S,N);
 
   return 0;

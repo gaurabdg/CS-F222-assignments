@@ -9,6 +9,8 @@
 	- ~~easier impl? adj matrix~~
 	- ~~detect cycle~~
 	- ~~failed in b->a<->c | loop in subgraph~~
+	- ~~subcycle detection reqd? | ab bc cb~~
+	- ~~handle non continuous letter array | ac ab cf bd~~
 	- check for more test cases with **loops**
 - [x] **Problem 3**
 	- detection of the connected components of an undirected graph
@@ -42,7 +44,7 @@
 	- all possible topological sortings
 	- revise
 - [x] **Problem 8**
-	- always sorted?
+	- ~~always sorted? | TODO sort first~~
 	- no duplicates in one set?
 - [x] **Problem 9**
 	- time overlap

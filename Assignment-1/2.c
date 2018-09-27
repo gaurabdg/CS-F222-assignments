@@ -1,11 +1,43 @@
 #include<stdio.h>
+#include<stdlib.h>
+
+char letters[26],scanStore[26];
+int k=0,l=0;
+int isPresent(char x,int size)
+{
+  for(int i=0;i<size;i++)
+  {
+    if(letters[i]==x)
+      return 1;
+  }
+  return 0;
+}
+
+int cmpfunc(const void* a, const void* b)
+{
+  return (*(char*)a-*(char*)b);
+}
+
+int getIndex(char c)
+{
+  int index;
+  for(int i=0;i<k;i++)
+  {
+    if((int)letters[i]==(int)c){
+      index=i;
+      break;
+    }
+
+
+  }
+  return index;
+}
 
 int main()
 {
   int n=0,edges,am[26][26]={{0}},y[26],z[26],c=0;
-  char letters[26]={'z'},results[26];
+  char results[26];
   scanf("%d",&edges);
-  
   // convert chars relation to adj matrix
   while(edges--)
   {
@@ -13,26 +45,31 @@ int main()
     scanf(" %c %c",&x,&y);
     int X=(int)x-97;
     int Y=(int)y-97;
-    letters[X]=x;
-    letters[Y]=y;
-    am[X][Y]=1;
+    if(!isPresent(x,k))
+      letters[k++]=x;
+    if(!isPresent(y,k))
+      letters[k++]=y;
+    scanStore[l++]=x;
+    scanStore[l++]=y;
   }
 
-  // calculating number of nodes/distinct letters present in 
-  for(int i=0;i<26;i++)
+  qsort(letters,k,sizeof(char),cmpfunc);
+
+  for(int i=0;i<l-1;i+=2)
   {
-    if(letters[i]>=97&&letters[i]<=122)
-        n++;
+    am[getIndex(scanStore[i])][getIndex(scanStore[i+1])]=1;
   }
+
+  n=k;
   
-  // for(int i=0;i<n;i++)
-  // {
-  //   for(int j=0;j<n;j++)
-  //   {
-  //     printf("%d",am[i][j]);
-  //   }
-  //   printf("\n");
-  // }
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      printf("%d",am[i][j]);
+    }
+    printf("\n");
+  }
 
   // initializing column sum and visited array
   for(int i=0;i<n;i++)
@@ -48,6 +85,17 @@ int main()
     {
       y[i]=y[i]+am[j][i];
     } 
+  }
+  int cycle=0;
+  for(int i=0;i<k;i++)
+  {
+    if(y[i]>0)
+      cycle++;
+  }
+  if(cycle==k)
+  {
+    printf("-1");
+    return 0;
   }
 
   // TOPOLOGICAL SORT
@@ -89,7 +137,6 @@ int main()
     }  
     c++;
   }
-
   // take care of cycles in subgraphs/overall cyclic graph
   int out=0;
   for(int i=0;i<n;i++)
@@ -109,7 +156,7 @@ int main()
     {
       printf("%c ",results[i]);
     }
-  }
-
+}
+  
   return 0;
 }
