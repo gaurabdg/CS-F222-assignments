@@ -3,6 +3,7 @@
 
 char letters[26],scanStore[26];
 int k=0,l=0;
+
 int isPresent(char x,int size)
 {
   for(int i=0;i<size;i++)
@@ -27,9 +28,8 @@ int getIndex(char c)
       index=i;
       break;
     }
-
-
   }
+
   return index;
 }
 
@@ -86,12 +86,15 @@ int main()
       y[i]=y[i]+am[j][i];
     } 
   }
+
   int cycle=0;
+
   for(int i=0;i<k;i++)
   {
     if(y[i]>0)
       cycle++;
   }
+
   if(cycle==k)
   {
     printf("-1");
@@ -134,9 +137,11 @@ int main()
         
         break;
       }
-    }  
+    }
+
     c++;
   }
+  
   // take care of cycles in subgraphs/overall cyclic graph
   int out=0;
   for(int i=0;i<n;i++)

@@ -22,13 +22,6 @@ int main()
 	qsort(arr,cp,sizeof(int),cmpfunc);
 	qsort(dep,cp,sizeof(int),cmpfunc);
 
-	// for(int i=0;i<cp;i++)
-	// 	printf("%d ",arr[i]);
-	// printf("\n");
-	// for(int i=0;i<cp;i++)
-	// 	printf("%d ",dep[i]);
-	// printf("\n");
-
 	int need=0,res=0;
 	int i=0,j=0;
 
