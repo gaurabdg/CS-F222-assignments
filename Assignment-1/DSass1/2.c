@@ -149,7 +149,7 @@ int main()
     if(results[i]>=97&&results[i]<=122)
       out++;
   }
-  // printf("%d\n",out );
+
   if(out!=n)
   {
     printf("-1");

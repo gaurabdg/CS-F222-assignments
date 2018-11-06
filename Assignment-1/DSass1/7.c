@@ -84,7 +84,7 @@ int main()
                 parent++;
                 break;
             }
-        } 
+        }
     }
 
     if (parent == n) 

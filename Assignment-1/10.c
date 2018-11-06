@@ -94,7 +94,8 @@ int main()
 
 	int fake=0;
 	int flag=0;
-
+	for(int i=0;i<10;i++)
+		printf("%d\n",mass[i] );
 	for(int i=1;i<=max;i++)
 	{
 		if((mass[i]==2 || mass[i]==-1) && flag==1)

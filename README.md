@@ -22,18 +22,6 @@
 	- extensive test case testing reqd
 	- useful testcase : 5 9	
 10 30 20 40 50 90 70 80 60
-3 11
-12
-40
-10
-5
-30
-20
-50
-32
-22
-70
-10
 - [x] **Problem 5**
 	- generate combos
 	- same power set impl
@@ -52,9 +40,26 @@
 	- ~~first sample doubt(<= case)~~
 - [ ] **Problem 10**
 	- not now
+   
+## Assignment 2
+
+- [] **Problem 1**
+    - sort triplets, check whether conn established with min cost
+    - look up backbone, switches
+    - MST problem
+- [] **Problem 2**
+    - same, optimize cost of travelling 
+- [] **Problem 3**
+    - find all possible component-split points
+- [] **Problem 4**
+    - isomorphism(easier impl-array to array distinct mapping)
+    - take care of edge case-diff number of nodes,edges
+- [x] **Problem 5**
+    - ~~construct trie of bin(val)~~
+    - testing
+- [] **Problem 6**
+    - 
+
 ### TODO:
 
-- [ ] implement every problem using dynamic mem allocation
-- [ ] check corner cases for all
-- [ ] check for directed graphs
-- [ ] try c99 in terminal systems
+- [ ] 
