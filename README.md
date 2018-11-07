@@ -43,10 +43,10 @@
    
 ## Assignment 2
 
-- [] **Problem 1**
-    - sort triplets, check whether conn established with min cost
-    - look up backbone, switches
-    - MST problem
+- [x] **Problem 1**
+    - ~~MST problem~~
+    - clean up
+    - testing
 - [] **Problem 2**
     - same, optimize cost of travelling 
 - [] **Problem 3**
