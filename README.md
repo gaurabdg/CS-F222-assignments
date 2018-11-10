@@ -47,18 +47,19 @@
     - ~~MST problem~~
     - clean up
     - testing
-- [] **Problem 2**
+- [x] **Problem 2**
     - same, optimize cost of travelling 
+    - min weight hamiltonian cycle
 - [] **Problem 3**
     - find all possible component-split points
-- [] **Problem 4**
+- [x] **Problem 4**
     - isomorphism(easier impl-array to array distinct mapping)
     - take care of edge case-diff number of nodes,edges
 - [x] **Problem 5**
     - ~~construct trie of bin(val)~~
     - testing
 - [] **Problem 6**
-    - 
+    - too easy?
 
 ### TODO:
 
