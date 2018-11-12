@@ -27,6 +27,8 @@ void checkIso(int str[], int n)
     {
         for(int j=0;j<v1;j++)
         {
+            // If for a connected pair vi,vj in A.nodes is present, 
+            // check if w1,wj in a perm of B.nodes is also connected or not
             if(a[str1[i]][str1[j]]==1&&b[str[i]][str[j]]!=1)
                 f=0;
         }
@@ -60,9 +62,8 @@ void heapPermutation(int a[], int size, int n)
 
 int main()
 {
-    // input
+    // Create utils
     scanf("%d %d",&v1, &e1);
-    // printf("%d %d", v1,e1);
     for(int i=0;i<e1;i++)
     {
         int x,y;
@@ -75,19 +76,18 @@ int main()
     }
 
     scanf("%d %d",&v2, &e2);
-    // printf("%d %d", v2,e2);
     for(int i=0;i<e2;i++)
     {
         int x,y;
         scanf("%d %d", &x, &y);
         b[x][y]=1;
     }
-
     for(int i=0;i<v2;i++)
     {
         str2[i]=i;
     }
 
+    // Generate permutations of graph B nodes and check if isomorphic with graph A
     heapPermutation(str2, v2, v2);
     if(!av)
         printf("No");

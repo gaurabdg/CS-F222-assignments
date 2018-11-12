@@ -50,7 +50,11 @@
 - [x] **Problem 2**
     - same, optimize cost of travelling 
     - min weight hamiltonian cycle
-- [] **Problem 3**
+    - https://www.youtube.com/watch?v=JE0JE8ce1V0&t=1427s
+    - for incomplete graph, put INT_MAX where edge absent(?)
+    - try for 5
+    - is it always complete?
+- [ ] **Problem 3**
     - find all possible component-split points
 - [x] **Problem 4**
     - isomorphism(easier impl-array to array distinct mapping)
@@ -58,7 +62,7 @@
 - [x] **Problem 5**
     - ~~construct trie of bin(val)~~
     - testing
-- [] **Problem 6**
+- [ ] **Problem 6**
     - too easy?
 
 ### TODO:
