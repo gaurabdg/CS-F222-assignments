@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include<stdio.h>
+
+#define INT_MAX 9999
  
 void swap(int *a,  int *b)
 {
@@ -56,6 +58,12 @@ int main(void)
         g[x][y]=c;
         g[y][x]=c;
     }
+
+    // to handle incomplete graphs
+    for(int i=0;i<v;i++)
+        for(int j=0;j<v;j++)
+            if(!g[i][j])
+                g[i][j]=INT_MAX;
 
     // Parameters
     int opt_path[5], curr_path[5], opt_cost = 0, curr_cost=0;
