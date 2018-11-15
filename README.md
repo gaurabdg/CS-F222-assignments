@@ -54,7 +54,7 @@
     - for incomplete graph, put INT_MAX where edge absent(?)
     - try for 5
     - is it always complete?
-- [ ] **Problem 3**
+- [x] **Problem 3**
     - find all possible component-split points
 - [x] **Problem 4**
     - isomorphism(easier impl-array to array distinct mapping)
@@ -64,6 +64,7 @@
     - testing
 - [ ] **Problem 6**
     - too easy?
+    - rigorous testing reqd
 
 ### TODO:
 
