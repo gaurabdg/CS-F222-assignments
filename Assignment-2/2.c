@@ -11,8 +11,8 @@ void swap(int *a,  int *b)
     *b = temp;
 }
  
-void tsp(int adjmat[5][5],  int v, 
-         int opt_path[5],  int *opt_cost,  int curr_path[5],
+void tsp(int adjmat[1000][1000],  int v, 
+         int opt_path[1000],  int *opt_cost,  int curr_path[1000],
          int *curr_cost,  int level)
 {
     if (level == v - 1)
@@ -49,7 +49,7 @@ int main(void)
     // Input
     int v, e;
     scanf("%d %d", &v, &e);
-    int g[5][5]={{0}};
+    int g[1000][1000]={{0}};
 
     for(int i=0;i<e;i++)
     {
@@ -66,7 +66,7 @@ int main(void)
                 g[i][j]=INT_MAX;
 
     // Parameters
-    int opt_path[5], curr_path[5], opt_cost = 0, curr_cost=0;
+    int opt_path[1000], curr_path[1000], opt_cost = 0, curr_cost=0;
 
     for (int i = 0; i < v; i++) 
         curr_path[i] = i;
@@ -86,4 +86,4 @@ int main(void)
         printf("%u ", g[opt_path[i]][opt_path[i + 1]]);
     }
     printf("%u\n", g[opt_path[v - 1]][0]);
- }
+}   

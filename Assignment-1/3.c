@@ -22,7 +22,7 @@ int main()
 		adj[x][y] = 1;
 		adj[y][x] = 1;
 	}
-
+	
 	// check for disjoint components
 	for(int i=0;i<nodes;i++)
 	{

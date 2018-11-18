@@ -1,6 +1,7 @@
 #include<stdio.h>
-#include<stdlib.h> 
+#include<stdlib.h>
 #include<stdbool.h>
+#include<limits.h>
 
 typedef struct tr
 { 
@@ -40,6 +41,17 @@ int findMax(trie* root, int key)
     for (int i = 31; i >= 0; i--) 
     { 
         bool bit = (key & ( 1 << i)); 
+        if(bit==1&&temp->child[1]!=NULL&&i==31)
+        {
+            temp = temp->child[1];
+            continue;
+        }
+
+        if(bit==0&&temp->child[0]!=NULL&&i==31)
+        {
+            temp = temp->child[0];
+            continue;
+        }
    
         if (temp -> child[1 - bit] != NULL) 
             temp = temp -> child[1 - bit]; 
@@ -47,7 +59,7 @@ int findMax(trie* root, int key)
             temp = temp -> child[bit]; 
     } 
    
-    return (key ^ temp -> value); 
+    return (key ^ (temp -> value)); 
 } 
   
   

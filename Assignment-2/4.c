@@ -23,14 +23,18 @@ void printArr(int a[],int n)
 void checkIso(int str[], int n)
 {
     int f=1;
+
     for(int i=0;i<v1;i++)
     {
         for(int j=0;j<v1;j++)
         {
             // If for a connected pair vi,vj in A.nodes is present, 
             // check if w1,wj in a perm of B.nodes is also connected or not
-            if(a[str1[i]][str1[j]]==1&&b[str[i]][str[j]]!=1)
+            if(a[i][j]!=b[str[i]][str[j]]){
                 f=0;
+                // printf("aas");
+            }
+
         }
     }
     if(f){

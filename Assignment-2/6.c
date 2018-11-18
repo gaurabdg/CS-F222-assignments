@@ -1,34 +1,37 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+int found = 0,energy,start,target;
+void findPath(int start, int step)
+{
+	int num1 = 2*start;
+	int num2 = 10*start +1;
+	step+=1;
+	if(step>energy||start>target)
+		return;
+
+	if(num1==target||num2==target||start==target)
+	{
+		found = 1;
+		return;
+	}
+
+	findPath(num1,step);
+	findPath(num2,step);
+}
+
 int main()
 {
 	int t;
 	scanf("%d", &t);
 	while(t--)
 	{
-		int x, y, z, f=0;
-		scanf("%d\n%d\n%d", &x, &y, &z);
-		// printf("%d\n%d\n%d", x, y, z);
-		while(y>0&&z--)
-		{
-			if(y%2==0)
-				y/=2;
-			else{
-				y=(y-1)/10;
-				if(y%10!=0)
-					break;
-			}
-			printf("%d\n",y );
-			if(y==x)
-			{
-				printf("Yes\n");
-				f=1;
-				break;
-			}
-		}
-			if(!f)
-			printf("No\n");
+		scanf("%d\n%d\n%d", &start, &target, &energy);
+		findPath(start,0);
+		if(found)
+			printf("Yes");
+		else
+			printf("No");
 	}
 
 }
